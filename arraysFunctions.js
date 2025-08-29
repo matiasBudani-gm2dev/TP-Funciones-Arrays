@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")()
-// 1 Crea una función que reciba un array de frutas y una fruta a buscar. La función debe devolver `true` si la fruta está en el array y `false` en caso contrario (usa includes).
+// functions
 function saltoLinea(){
     console.log("\n")
 }
@@ -32,7 +32,7 @@ function checkIfAllPositives(array){
 function validName(str, strMinLength){
     return /^[a-zA-Z\s]*$/.test(str) && str.trim().length >= strMinLength
 }
-
+// 1 Crea una función que reciba un array de frutas y una fruta a buscar. La función debe devolver `true` si la fruta está en el array y `false` en caso contrario (usa includes).
 const frutas = []
 let inWhile = true
 while(inWhile){
@@ -53,7 +53,8 @@ if(isArray(frutas)){
     if(findElement(frutas, frutaABuscar)){
         console.log(frutaABuscar + " se encuentra en la lista de frutas")
     }else{
-        console.log(frutaABuscar + " no se encuentra en nuestra lista de frutas")
+        validName(frutaABuscar, 3) ? console.log(frutaABuscar + " no se encuentra en la lista")
+        : console.log(frutaABuscar + " no se encuentra en nuestra lista.\nLe recomendamos verificar que ingreso el nombre correctamente")
     }
 }else{
     console.log("El parametro recibido no es un array")
@@ -134,6 +135,33 @@ if(isArray){
     }else{
         validName(nombreABuscar, 2) ? console.log(nombreABuscar + " no se encuentra en la lista")
         : console.log(nombreABuscar + " no se encuentra en nuestra lista.\nLe recomendamos verificar que ingreso el nombre correctamente")
+    }
+}else{
+    console.log("El parametro recibido no es un array")
+}
+saltoLinea()
+// 5 Crea una función que reciba un array de productos y un producto a buscar. La función debe devolver si el producto existe o no (usa includes).
+const productos = []
+inWhile = true
+while(inWhile){
+    let productoInProductos = prompt("Ingrese un producto (ingrese 0 cuando termine de ingresar productos: ").toLocaleLowerCase()
+    if(productoInProductos === '0'){
+        inWhile = false
+    }else{
+        if(validName(productoInProductos, 15)){
+            productos.push(productoInProductos)
+            console.log(productoInProductos + " added")
+        }else{
+            console.log("Nuesto sistema solo acepta productos con letras y mas de 14 caracteres")
+        }
+    }
+}
+if(isArray(productos)){
+    let productoABuscar = prompt("Que fruta queres buscar: ").toLocaleLowerCase()
+    if(findElement(frutas, productoABuscar)){
+        console.log(productoABuscar + " se encuentra en la lista de productos")
+    }else{
+        console.log(productoABuscar + " no se encuentra en nuestra lista de productos")
     }
 }else{
     console.log("El parametro recibido no es un array")
