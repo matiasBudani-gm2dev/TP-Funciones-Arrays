@@ -46,16 +46,16 @@ if(isArray(frutas)){
 const numbers = []
 inWhile = true
 while(inWhile){
-    let numero = prompt('Ingrese un numero (ingrese "a" cuando termine de ingresar numeros: ')
-    if(numero === 'a'){
+    let numeroInNumbers = prompt('Ingrese un numero (ingrese "a" cuando termine de ingresar numeros: ')
+    if(numeroInNumbers === 'a'){
         inWhile = false
     }else{
-        if(numero != ''){
-            numero = Number(numero)
+        if(numeroInNumbers != ''){
+            numeroInNumbers = Number(numeroInNumbers)
         }
-        if(isNumber(numero)){
-            numbers.push(numero)
-            console.log(numero + " added")
+        if(isNumber(numeroInNumbers)){
+            numbers.push(numeroInNumbers)
+            console.log(numeroInNumbers + " added")
         }else{
             console.log("El sistema solo acepta numeros.")
         }
