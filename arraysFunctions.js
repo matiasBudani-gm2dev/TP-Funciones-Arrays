@@ -4,10 +4,8 @@ function isArray(array){
     return Array.isArray(array)
 }
 function findElement(array, element){
-    for(i = 0; i < array.length; i++){
-        if(element === array[i]){
-            return true
-        }
+    if(array.includes(element)){
+        return true
     }
     return false
 }
