@@ -166,3 +166,7 @@ if(isArray(productos)){
 }else{
     console.log("El parametro recibido no es un array")
 }
+/* ACLARACION: Criterio para verificar si debe comprobar si un array es vacio o no:
+Verifiacion de datos (ej: ver que los numeros sean positivos): Debe comprobar que el array tenga elemntos
+Buscar datos (ej: buscar un nombre): No es necesario comprobar que el array tenga elementos 
+*/
