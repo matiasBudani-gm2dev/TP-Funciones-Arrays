@@ -21,6 +21,10 @@ function checkIfAllPositives(array){
     return array.every((number) => number >= 0)
 }
 
+function verifyAge(edad){
+    return Number.isInteger(edad) && edad >= 0
+}
+
 const frutas = []
 let inWhile = true
 while(inWhile){
@@ -69,4 +73,28 @@ if(arrayNotEmpty(numbers)){
     }
 }else{
     console.log("El parametro recibido no es un array o esta vacio")
+}
+// 3 Crea una función que reciba un array de edades y devuelva `true` si al menos una edad es mayor o igual a 18 (usa some).
+const edades = []
+inWhile = true
+while(inWhile){
+    let edadInEdades = prompt('Ingrese una edad (ingrese "a" para termine de ingresar edades): ')
+    if(edadInEdades === 'a'){
+        inWhile = false
+    }else{
+        edadInEdades = Number(edadInEdades)
+        if(verifyAge(edadInEdades)){
+            edades.push(edadInEdades)
+            console.log(edadInEdades + " added")
+        }
+        else{
+            console.log("El sistema solo acepta numeros enteros positivos")
+        }
+    }
+}
+if(arrayNotEmpty(edades)){
+    edades.some((edad) => edad >= 18) ? console.log("Existe un mayor de edad en la lista") 
+    : console.log("No hay mayores de edad en la lista")
+}else{
+    console.log("El array enviado esta vacio o no es un array")
 }
