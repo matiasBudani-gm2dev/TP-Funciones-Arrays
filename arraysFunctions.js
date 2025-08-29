@@ -161,7 +161,7 @@ if(isArray(productos)){
     if(findElement(frutas, productoABuscar)){
         console.log(productoABuscar + " se encuentra en la lista de productos")
     }else{
-        console.log(productoABuscar + " no se encuentra en nuestra lista de productos")
+        validName(productoABuscar, 15) ? console.log(productoABuscar + " no se encuentra en la lista") : console.log(productoABuscar + " no se encuentra en nuestra lista.\nLe recomendamos verificar que ingreso el nombre correctamente")
     }
 }else{
     console.log("El parametro recibido no es un array")
